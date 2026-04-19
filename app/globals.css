@@ -190,6 +190,11 @@ html, body { height: 100%; overflow: hidden; }
   line-height: 1.5;
 }
 
+.footnote-translation {
+  font-style: italic;
+  opacity: 0.85;
+}
+
 /* ─── Text Layers ────────────────────────────────────────── */
 
 .text-layer {

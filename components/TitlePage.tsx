@@ -22,8 +22,8 @@ export default function TitlePage({ onNavigate }: TitlePageProps) {
         <h1 className="title-main">Generative<br />Palimpsest</h1>
         <div className="title-rule" />
 
-        <p className="title-author">Compiled by the Reader</p>
-        <p className="title-scribe">Generative Scribe: Anonymous · Cambridge, 2025</p>
+        <p className="title-author">Pranav Ramesh</p>
+        <p className="title-scribe">With an anonymous generative scribe · Cambridge, 2025</p>
 
         <div className="toc-block">
           <p className="toc-heading">Contents</p>

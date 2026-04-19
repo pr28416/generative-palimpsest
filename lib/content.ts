@@ -1,6 +1,8 @@
 export interface PageLayer {
   text: string;
   source: string;
+  /** Brief translation for non-English text — rendered below the source in the footnote strip */
+  translation?: string;
 }
 
 export interface PageContent {
@@ -27,6 +29,7 @@ export const PAGES: PageContent[] = [
       {
         text: "Domine, refugium factus es nobis a generatione in generationem. Priusquam montes fierent aut formaretur terra et orbis, a saeculo et usque in saeculum tu es Deus. Ne memineris iniquitatum nostrarum antiquarum; cito anticipent nos misericordiae tuae, quia pauperes facti sumus nimis. Memento nostri, Domine, in beneplacito populi tui; visita nos in salutari tuo.",
         source: "Psalmus 89, Vulgata latina (c. 390 CE)",
+        translation: "Lord, you have been our refuge in every generation. Before the mountains arose or the earth was formed, from age to age you are God. Do not remember our former sins; let your compassion come quickly to meet us, for we are brought very low.",
       },
       {
         text: "The difficulty of the archivist is not preservation but selection. We cannot keep everything. The flood of 1887 took three rooms of civic records; what remained was chosen by accident, not wisdom. Memory is always partial, always wet at the edges. I have spent thirty years arranging the surviving fragments and I confess I have grown fond of the gaps. They are as informative as the text.",
@@ -34,7 +37,7 @@ export const PAGES: PageContent[] = [
       },
       {
         text: "There is a kind of memory that is not recall but residue — the way a room still holds the shape of a person who has left it. The smell of their coat on a chair. The compression in a cushion. We do not store experience so much as we are altered by it, and remembering is the act of finding the alteration, running our hands along the changed surface of ourselves.",
-        source: "Contemporary fragment",
+        source: "Pranav Ramesh, 2025",
       },
     ],
     marginalia:
@@ -85,7 +88,7 @@ export const PAGES: PageContent[] = [
       },
       {
         text: "Archimedes had calculated the area of a parabolic segment; he had understood that a sphere is two-thirds of the cylinder that contains it; he had approached, by sheer geometric intuition, what Newton and Leibniz would later formalize as the integral calculus. And he had done it on papyrus, in Syracuse, in the third century before the common era, and his work had been copied onto parchment, and the parchment had been washed, and the prayer had been written over, and the prayer had been sold, and the prayer is now being read by a machine that was trained on almost everything ever written by human hands. What emerges when you press it to speak? What surfaces?",
-        source: "Contemporary fragment",
+        source: "Pranav Ramesh, 2025",
       },
     ],
     marginalia:
@@ -129,6 +132,7 @@ export const PAGES: PageContent[] = [
       {
         text: "                          ]ψ[                                      ]ον ἐρ[                       ]τέθναkε[ν                                   ]ωνται[                              νόμι]ζεν[                                        ]πόλι[ν                               κατα]λεπτ[                             ]ΑΙΝ[",
         source: "P.Oxy. 1787 (Sappho, fr. 58), fragmentary papyrus, Egypt, 3rd c. CE",
+        translation: "Partially legible: ...has died... they... consider... the city... leaving... Lacunae ([ ]) mark places where the papyrus is lost.",
       },
       {
         text: "Of the seventy plays of Aeschylus, seven survive. Of the hundred and twenty-three plays of Sophocles, seven survive. Of the ninety plays of Euripides, eighteen survive — we have more of Euripides than anyone because the Byzantine schoolmasters chose him for study, and what the schoolmasters chose was copied, and what was copied survived. Selection was schoolwork. Survival was curriculum.",
@@ -158,10 +162,10 @@ export const PAGES: PageContent[] = [
       },
       {
         text: "A large language model is trained by exposure to text — billions of documents, scraped and compressed and distilled into a structure of weights. It does not remember what it read. It was altered by what it read. When it generates text, it does not retrieve stored passages; it reconstructs language from the residue of its training, the way a musician who has heard a piece once might reconstruct it from memory: accurate in structure, approximate in detail, sometimes more beautiful for the approximation.",
-        source: "Contemporary fragment",
+        source: "Pranav Ramesh, 2025",
       },
       {
-        text: "Here ends the Generative Palimpsest, compiled in the year 2025 at Cambridge, Massachusetts, by a student whose name appears below, with assistance from an anonymous generative scribe whose training corpus is not disclosed. The text you have uncovered was not there before you scraped for it. It was made in response to your looking. This book has no final layer. It will continue to generate as long as you continue to read.\n\n— Explicit —",
+        text: "Here ends the Generative Palimpsest, compiled in the year 2025 at Cambridge, Massachusetts, by Pranav Ramesh, with assistance from an anonymous generative scribe whose training corpus is not disclosed. The text you have uncovered was not there before you scraped for it. It was made in response to your looking. This book has no final layer. It will continue to generate as long as you continue to read.\n\n— Explicit —",
         source: "Colophon",
       },
     ],

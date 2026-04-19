@@ -189,7 +189,12 @@ export default function Page({ page, isActive, uvMode }: PageProps) {
         <div className="marginalia">{page.marginalia}</div>
         <div className="footnote-strip">
           {page.layers.map((layer, i) => (
-            <div key={i}><sup>{i + 1}</sup> {layer.source}</div>
+            <div key={i}>
+              <sup>{i + 1}</sup> {layer.source}
+              {layer.translation && (
+                <span className="footnote-translation"> — {layer.translation}</span>
+              )}
+            </div>
           ))}
         </div>
       </div>
