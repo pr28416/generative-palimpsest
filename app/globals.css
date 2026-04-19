@@ -234,7 +234,7 @@ html, body { height: 100%; overflow: hidden; }
   color: var(--ai-normal, var(--ai-layer-color));
   opacity: 0.82;
   line-height: 1.65;
-  max-width: 200px;
+  /* max-width is set inline from the actual stroke bounding box */
   pointer-events: none;
   z-index: 8;
   animation: fadeInLayer 1.2s ease-in;
@@ -247,23 +247,20 @@ html, body { height: 100%; overflow: hidden; }
 
 /* ─── Loading Zone Pulse ─────────────────────────────────── */
 
+/* Dashed rectangle preview of where AI text will appear */
 .ai-loading-pulse {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  margin-left: -10px;
-  margin-top: -10px;
-  border-radius: 50%;
-  border: 1.5px solid var(--ink-faded);
+  /* left/top/width/height set inline from stroke bounding box */
+  border: 1px dashed rgba(90, 60, 20, 0.4);
   pointer-events: none;
   z-index: 9;
-  animation: pulsing-ring 1.2s ease-in-out infinite;
+  animation: pulsing-box 1s ease-in-out infinite;
 }
 
-@keyframes pulsing-ring {
-  0%   { opacity: 0.7; transform: scale(0.6); }
-  50%  { opacity: 0.3; transform: scale(1.4); }
-  100% { opacity: 0.7; transform: scale(0.6); }
+@keyframes pulsing-box {
+  0%   { opacity: 0.7; }
+  50%  { opacity: 0.1; }
+  100% { opacity: 0.7; }
 }
 
 /* ─── Wear States ────────────────────────────────────────── */
