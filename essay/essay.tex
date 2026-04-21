@@ -1,0 +1,263 @@
+% essay.tex  —  GENED 1090 Capstone Essay
+%
+% Compile sequence:
+%   pdflatex essay
+%   biber essay
+%   pdflatex essay
+%   pdflatex essay
+%
+% Requires: TeX Live (or MiKTeX) with biblatex-mla and biber.
+
+\documentclass[12pt]{article}
+
+% ── Font & encoding ───────────────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}          % Times New Roman for body text and math
+
+% ── Page geometry ─────────────────────────────────────────────────────────────
+\usepackage[margin=1in]{geometry}
+
+% ── Line spacing ──────────────────────────────────────────────────────────────
+\usepackage{setspace}
+\doublespacing
+
+% ── Headers / footers ─────────────────────────────────────────────────────────
+% MLA: "Lastname #" top-right on every page, no header rule.
+% The name/course/date block is standard MLA body text, not a fancyhdr header.
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Ramesh \thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% ── Bibliography (MLA) ────────────────────────────────────────────────────────
+\usepackage[style=mla,backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+% ── Miscellaneous ─────────────────────────────────────────────────────────────
+\usepackage{microtype}          % improved justification
+\usepackage{csquotes}           % context-sensitive quotation marks (biblatex)
+
+% ─────────────────────────────────────────────────────────────────────────────
+
+\begin{document}
+
+% MLA info block: body text, top-left of page 1 only.
+\noindent Pranav Ramesh\\
+GENED 1090\\
+05/11/2026
+
+% MLA title: centered, plain — no bold, no italic, no underline.
+\begin{center}
+  Surface and Residue: \textit{Generative Palimpsest} as Digital Book
+\end{center}
+
+\noindent In 1229~\textsc{ce}, an unnamed Byzantine scribe received twelve
+leaves of parchment from a monastery library, washed them with milk and oat
+bran, and copied over them a Greek Orthodox prayer book, a Euchologion for
+use in the Divine Liturgy \parencite{netz2007}. The text he covered had been
+written some nine hundred years earlier in the hand of Archimedes. Parchment was costly, and reuse was rational. The writing he erased descended
+into the skin, held by iron gall ink that had bitten too deep for any sponge
+to remove, and waited. In 1906 the Danish
+classicist J.~L. Heiberg recognized the prayer book as a palimpsest containing
+works of Archimedes. In 2001, multispectral imaging at the Walters Art Museum
+in Baltimore recovered the proof that Archimedes had worked with actual
+infinity, a concept not formally rediscovered until Newton and Leibniz,
+fourteen centuries later.
+
+\textit{Generative Palimpsest} takes this story as its governing metaphor and
+structural model. It is a web-based interactive book, rendered on a laptop or
+tablet screen as a two-page spread, with six pages of layered text across
+chapters on Memory, Erasure, the Archimedes Palimpsest, Preservation, Loss,
+and the Generative Scribe. A parchment-textured veil covers each page; the
+reader scrapes it away with the cursor, revealing text beneath. When a cleared
+zone exceeds sixty percent transparency, an artificial intelligence language
+model surfaces a new prose fragment in a distinct color, text generated in the
+moment of the reader's looking. \textit{Generative Palimpsest}
+deploys the digital screen as a writing platform that behaves structurally like
+the reused medieval parchment page: a surface written over many times, from
+which older layers emerge when the new is scraped away. In enacting this
+structure, the book makes a claim about large language models: they are shaped
+by their training data and surface residue from it the way a palimpsest
+surfaces ink.
+
+The platform of \textit{Generative Palimpsest} is the digital screen; its
+writing support is the HTML5 Canvas element, rendered in a web browser with a
+parchment texture and an ink palette derived from aged manuscripts. In the
+taxonomy Amaranth Borsuk develops in \textit{The Book}, this places the project
+within a long history of material experimentation in which each writing platform
+brings distinct affordances to the act of reading. Borsuk traces a lineage from
+wax tablet to papyrus scroll to parchment codex to paper to digital screen,
+arguing that the book has always been a site of experimentation and
+transformation, never settling into a fixed form \parencite{borsuk2018}. Only a
+computational surface can hold generative layers, text that the reader's act
+of looking calls into being. Clay, papyrus, parchment, and paper are fixed
+surfaces. The screen is the first writing platform that can write back.
+
+The scraping mechanic, implemented through the Canvas \texttt{destination-out}
+compositing operation, which erases the opaque veil where the cursor drags, is
+the computational equivalent of the scribe's wet sponge or scraping knife.
+Richard H.~Rouse and Mary A.~Rouse document the dense economic network of
+parchment sellers, scribes, illuminators, and stationers that sustained
+commercial book production in medieval Paris, a trade in material as much as
+in text, in which parchment was costly and reuse was rational \parencite{rouse2000}.
+The gesture of
+scraping has been translated from vellum to the digital interface; the
+relationship between reader and surface, between concealment and disclosure,
+remains.
+
+Each of the six pages contains three pre-composed text layers at different
+opacities and rotations, mimicking the palimpsest's characteristic overwriting.
+The layers are drawn from heterogeneous sources: the Latin Vulgate Psalms
+(Psalm~89, \textit{c.}~390~\textsc{ce}), Sappho's Fragment~16 in Anne Carson's
+translation, a verse from the Qur\textquoteleft an (3:185), scholarly accounts
+of the Archimedes Palimpsest, archival descriptions of library fires, and my own prose. Each non-English source layer (the Vulgate Latin and the
+Arabic Qur\textquoteleft anic verse) is accompanied by an English translation
+in the footnote strip at the base of its page; the Sappho fragment is presented
+exclusively in Carson's English rendering. Even before scraping begins, all layers are partially visible through the semi-transparent veil.
+
+The codicological term for what lies beneath is \textit{scriptio inferior}, the
+lower writing; what is visible on the surface is the \textit{scriptio superior}.
+Both are present simultaneously, at different opacities, before any interaction
+begins. The choice of four distinct serif typefaces (IM Fell English, Spectral,
+Lora, and Cormorant Garamond, each assigned to a different layer) mimics the
+way different scribal hands are distinguishable by paleographers examining a
+manuscript. M.~B. Parkes, in his studies of medieval scribal practice, observes
+that layout and decoration ``function like punctuation'': they are part of the
+presentation of a text that both facilitates its use by a reader and interprets
+the text as transmitted to the scribe
+\parencite{parkes1991}. The typographic assignment in \textit{Generative Palimpsest} operates accordingly:
+font becomes a codicological cue, distinguishing the eleventh-century liturgical
+stratum from the modern-archival stratum from my own voice.
+
+The act of scraping makes the reader a conservator. The cursor performs what
+ultraviolet light and multispectral imaging perform on a material palimpsest: it
+renders the surface transparent, disclosing what is beneath. Johanna Drucker,
+analyzing what the electronic book must inherit from the codex, argues that the
+traditional manuscript is ``already, in an important and suggestive way,
+virtual'': its apparatus of marginalia, running titles, catchwords, and quire
+signatures constitutes a navigational system for moving through space not
+literally present on any single page \parencite{drucker2008}. The book applies
+this observation
+literally. It includes foliation (fol.~1r through fol.~6r), three quire
+signatures (\textit{a~i}, \textit{b~i}, \textit{c~i}), catchwords at the foot
+of each page anticipating the text of the next, running titles in the top
+margin, outer marginalia, hidden marginalia revealed only by scraping the lower
+margin, and manicule reader-marks concealed beneath the veil. These are the organizing apparatus of the medieval manuscript
+translated into a computational environment where they remain meaningfully
+operative. The catchwords guide the eye across the virtual spine, the quire
+signatures mark the gathering structure, the marginalia comment on the layers
+they flank. A UV mode, toggled by a button in the interface, reveals all three
+text layers simultaneously in distinct luminous hues, simulating the
+multispectral imaging used to recover the Archimedes undertext at the Walters.
+What the conservators accomplished with physics, the reader accomplishes with a
+keystroke.
+
+When a cleared zone exceeds sixty percent transparency, the application calls a
+large language model that generates a short prose fragment instructed to surface
+``as a recovered fragment, something that was nearly lost and not entirely
+coherent.'' This fourth layer reconstitutes language from the residue of its training,
+assembling fragments rather than retrieving stored passages. Parkes
+describes how a medieval scribe's errors became, in subsequent copies, new
+readings, ``and sometimes, new meanings,'' because the scribe was a conduit for
+texts he often did not fully understand, in languages he may have known
+imperfectly, his attention wandering, his hand tired \parencite{parkes1991}.
+The scribe introduced
+variants. So does the model: it echoes, distorts, or quietly contradicts what
+is visible on the page, generating language that is original in the act of
+generation, borrowed from nothing prior. Both the scribe and the model are machines
+for the transmission of language that distort what they transmit. What we call a
+variant in the scribe, we call a hallucination in the model; the mechanism
+differs, but both occupy the same structural position in the transmission of
+language.
+
+As Netz and Noel recount, the prayer book that Heiberg identified concealed
+seven treatises by Archimedes, including \textit{The Method of Mechanical
+  Theorems}, the only surviving witness to Archimedes' engagement with infinitely
+large sets, and his closest approach to integral calculus. The manuscript was
+sold at Christie's in 1998, deposited at the Walters Art Museum in Baltimore,
+and subjected to multispectral imaging that recovered approximately eighty
+percent of the undertext; the remaining twenty percent required synchrotron
+X-ray fluorescence imaging to map the iron atoms in Archimedes' ink. Some
+lacunae remain permanent. This is the third chapter of \textit{Generative
+  Palimpsest}: the Archimedes story is the book's central case study, the
+palimpsest in which what descended into the skin changed the history of
+mathematics \parencite{netz2007}.
+
+L.~D. Reynolds and N.~G. Wilson, tracing the transmission of Greek and Latin
+literature through the medieval period, observe that of the seventy plays of
+Aeschylus, seven survive; of the one hundred and twenty-three of Sophocles,
+seven; of the ninety of Euripides, eighteen, and we have more of Euripides
+because the Byzantine schoolmasters chose him for study \parencite{reynolds1991}.
+What was chosen was copied, and what was copied survived. The fifth chapter of \textit{Generative
+  Palimpsest}, on Loss, opens with a fragment from the Oxyrhynchus papyrus
+P.Oxy.~1787, a partially legible Sappho poem in which lacunae are marked with
+brackets, signaling the absence of papyrus that is no longer there. Anne
+Carson, in \textit{Nox}, describes reading such a fragmentary text as ``reading
+in a very dark room'': knowing ``there is furniture,'' putting your hands out
+and touching ``the cool edge of a table, the rough weave of a chair,''
+constructing the room from the parts you can reach, ``never certain the room is
+the shape you imagine'' \parencite{carson2010}. The model's training corpus is also a curriculum,
+assembled by engineers making decisions about what text to include, decisions as
+consequential for what will be remembered as any medieval selection, and less
+transparent in their criteria. The brackets in the
+papyrological transcription and the model's silences mark the same kind of
+absence.
+
+\textit{Generative Palimpsest} is a philosophical book whose argument is enacted
+through its structure: the reader grasps the claim by scraping, before any
+sentence names it. N.~Katherine Hayles, in \textit{Writing Machines}, develops the
+concept of the technotext, a literary work that foregrounds the inscription
+technology that produces it, making the relationship between medium and content
+legible as argument in itself \parencite{hayles2002}. \textit{Generative
+  Palimpsest} is a technotext
+in this sense. It is a palimpsest that generates, asking the reader to perform, physically,
+the analogy between digital scraping and manuscript conservation. Three of the eighteen text layers are my
+own prose, attributed to ``Pranav Ramesh, 2025,'' sitting at the same opacity
+as the Vulgate Psalm and the Sappho fragment, available only to the reader who
+scrapes to find them.
+My authorship is submerged in the same way: my prose sits beneath the veil
+as Archimedes sits beneath the Euchologion, discoverable only by a reader who
+scrapes. The colophon on the final page reads: ``This book has
+no final layer. It will continue to generate as long as you continue to read.''
+The \textit{explicit}, the medieval manuscript's closing formula marking
+completion, is deferred.
+
+In its material apparatus, \textit{Generative Palimpsest} reproduces the full
+parchment codex: a two-page spread across three gatherings, each opening with a
+quire signature; foliation in the style of recto leaves; catchwords, running
+titles, marginalia, footnote strips, a table of contents, and a colophon. The
+page-turn is animated via clip-path transition in the manner of a physical
+opening; the spine is rendered as a gradient gutter between pages. A
+paleographer would recognize the organizational apparatus at a glance. Every
+reader who opens \textit{Generative Palimpsest} receives a different book, because the AI-generated fourth layer is new on each
+visit, constructed in response to what that particular reader has uncovered on
+that particular page. The medieval codex preserved its \textit{ordinatio}, the
+overall arrangement of text and paratext, across many copies, each introducing
+small scribal variants but preserving the structure of the exemplar
+\parencite{parkes1991}. \textit{Generative Palimpsest} has no exemplar. Every
+copy is unique in the way every palimpsest is unique: the residue that survives
+depends on the particular conjunction of ink, vellum, sponge, and scribal hand.
+
+Borsuk argues that the history of the book records our ``highly contingent
+cultural ideals of authorship and art,'' a record of ongoing material
+transformation in which each new platform reconfigures what reading and writing
+can mean \parencite{borsuk2018}. The imagined reader is someone who has held a medieval manuscript and
+used a language model, someone who can feel, in the act of scraping, the
+equivalence of the scholar's UV lamp and the reader's cursor: both press
+through a visible surface to what lies beneath, and find something made in
+the act of looking. The palimpsest teaches that erasure is incomplete; ink descends into skin and
+waits. \textit{Generative
+  Palimpsest} extends this lesson to the present moment and asks whether what a
+language model surfaces is better understood as retrieval or as residue. The
+book declines to answer directly; it asks the reader to scrape.
+
+% Ensure all 8 sources appear in Works Cited regardless of citation style.
+\nocite{netz2007,parkes1991,reynolds1991,borsuk2018,hayles2002,drucker2008,rouse2000,carson2010}
+
+\newpage
+\printbibliography[title={Works Cited}]
+
+\end{document}

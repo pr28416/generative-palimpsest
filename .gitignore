@@ -39,3 +39,28 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# LaTeX build artifacts (wherever compiled)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+# *.log is too broad — scope it to known LaTeX log names
+essay.log
+essay/*.log
+# keep the compiled PDF
+!*.pdf
+
+# Cursor IDE project cache
+.cursor/
+
+# Machine-specific latexmk config (arch workaround for macOS Xcode license)
+.latexmkrc
+essay/.latexmkrc
