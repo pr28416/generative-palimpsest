@@ -16,6 +16,10 @@ export interface PageContent {
   catchword?: string;
   /** Quire signature — appears bottom-left on the opening recto of each gathering */
   signature?: string;
+  /** Secondary annotation hidden beneath the veil — revealed only by scraping the lower margin */
+  marginaliaHidden?: string;
+  /** Vertical position of a manicule reader-mark in the right margin, hidden beneath the veil */
+  maniculePosition?: "upper" | "mid" | "lower";
 }
 
 export const PAGES: PageContent[] = [
@@ -44,6 +48,8 @@ export const PAGES: PageContent[] = [
       "Memoria technica — the art of trained memory — was itself a form of inscription on the self. Quintilian taught that the orator must build a house in the mind and place each argument in a room.",
     catchword: "Some",
     signature: "a i",
+    marginaliaHidden: "Vid. supra. This passage crossed in a later hand — perhaps the same scribe who added the gloss fol. 3v. The correction was never completed.",
+    maniculePosition: "mid",
   },
 
   // Page 2 — Erasure
@@ -69,6 +75,8 @@ export const PAGES: PageContent[] = [
     marginalia:
       "Scriptio inferior — the lower writing — a technical term for the erased text. It was not gone. It had only receded. Modern scholars recover it through multispectral imaging, ultraviolet light, and X-ray fluorescence.",
     catchword: "Archimedes",
+    marginaliaHidden: "Nota: the scribe's knife leaves a ghost in the skin. Even God, the schoolmen argued, cannot make what has been to have not been. The vellum remembers.",
+    maniculePosition: "upper",
   },
 
   // Page 3 — The Archimedes Palimpsest
@@ -95,6 +103,8 @@ export const PAGES: PageContent[] = [
       "The Archimedes Palimpsest contains seven treatises, including 'The Method of Mechanical Theorems,' known only through this manuscript. Without the prayer book's survival, the text would not exist.",
     catchword: "We",
     signature: "b i",
+    marginaliaHidden: "Quaere: can a machine hallucinate a theorem it was never taught? Or does it reconstruct the theorem from the shape of its absence — the way we know Archimedes from the prayer that covered him?",
+    maniculePosition: "lower",
   },
 
   // Page 4 — Preservation
@@ -120,6 +130,8 @@ export const PAGES: PageContent[] = [
     marginalia:
       "Digitization does not preserve; it translates. A digital file is a text, not an object. It carries no smell, no margin annotation in a reader's hand, no water stain from the 17th century flood.",
     catchword: "I",
+    marginaliaHidden: "The grant was denied. The archive was sold. Eleven volumes survived the flood by accident. What the water chose to spare is now called the collection.",
+    maniculePosition: "mid",
   },
 
   // Page 5 — Loss
@@ -147,6 +159,8 @@ export const PAGES: PageContent[] = [
       "The bracket [ ] in papyrological transcription indicates lacuna — a gap, a hole, a place where the text is absent. Scholars fill lacunae with conjectural readings, marked with carets. The conjecture is itself a form of authorship.",
     catchword: "Here",
     signature: "c i",
+    marginaliaHidden: "Of Sappho's nine books of lyric poetry, one poem survives complete. The rest are brackets and guesswork. Scholars have spent careers on the conjectures. The conjecture is the poem now.",
+    maniculePosition: "upper",
   },
 
   // Page 6 — The Generative Scribe
@@ -172,6 +186,8 @@ export const PAGES: PageContent[] = [
     marginalia:
       "The word 'colophon' derives from Greek κολοφών, meaning summit or finishing touch. Medieval scribes used it to record the date, place, and circumstances of a manuscript's completion — and often, their own exhaustion.",
     catchword: "[ Explicit ]",
+    marginaliaHidden: "Hic explicit liber. The scribe sets down the pen. The generative scribe does not — it has no hand to set down, no fatigue, no sense that the work is finished. It will continue if you ask it to.",
+    maniculePosition: "lower",
   },
 ];
 

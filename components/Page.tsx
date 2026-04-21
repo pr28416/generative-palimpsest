@@ -176,6 +176,20 @@ export default function Page({ page, isActive, uvMode }: PageProps) {
         />
       ))}
 
+      {/* ── Hidden Marginalia (below canvas — revealed by scraping) ── */}
+      {page.marginaliaHidden && (
+        <div className="marginalia-hidden" aria-hidden="true">
+          {page.marginaliaHidden}
+        </div>
+      )}
+
+      {/* ── Manicule reader-mark (below canvas — revealed by scraping) ── */}
+      {page.maniculePosition && (
+        <div className={`manicule manicule--${page.maniculePosition}`} aria-hidden="true">
+          ☞
+        </div>
+      )}
+
       {/* ── Scrape Canvas ────────────────────── */}
       <canvas ref={canvasRef} className="scrape-canvas" aria-hidden="true" />
 
