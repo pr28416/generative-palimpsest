@@ -23,7 +23,7 @@ export default function TitlePage({ onNavigate }: TitlePageProps) {
         <div className="title-rule" />
 
         <p className="title-author">Pranav Ramesh</p>
-        <p className="title-scribe">With an anonymous generative scribe · Cambridge, 2025</p>
+        <p className="title-scribe">GENED 1090 · Jack Rodgers' Section · Cambridge, 2025</p>
 
         <div className="toc-block">
           <p className="toc-heading">Contents</p>
